@@ -50,6 +50,7 @@ function mainMenu() {
                 break;
             case "Exit":
                 console.log("Goodbye");
+                break;
         }
     })
 }
@@ -131,6 +132,9 @@ function selectProduct() {
                             console.log("Your Order has been placed.")
                             //updates database with new quantity
                             connection.query("UPDATE products SET stock_quantity = stock_quantity - " + quantity + " WHERE item_id = " + itemID);     
+                            //updates product_sales
+
+                            connection.query("UPDATE products SET product_sales = product_sales + " + totalCost + " WHERE item_id + " + itemID);
                             timeOut();
                             break;
                         case false:
