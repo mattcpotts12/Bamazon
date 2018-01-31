@@ -19,7 +19,7 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
 
-    console.log("Welcome to Bamazon!\n");
+    console.log("Bamazon Manager\n");
     mainMenu();
 });
 
